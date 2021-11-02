@@ -9,13 +9,11 @@ const EvenEmitter = require('events');
 //     password: process.env.DB_PASSWORD,
 // });
 
-console.log('hello');
-
 var con = mysql.createConnection({
   host : "vincentprivatenas.mynetgear.com",
   port : "3306",
-  user : "nwolf",
-  password : "123456789",
+  user : "nathanw",
+  password : "laker500",
   database : "Warehouse329"
 });
 const emitter = new EvenEmitter();
