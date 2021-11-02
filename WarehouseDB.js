@@ -1,4 +1,6 @@
-var mysql = require('mysql2');
+const mysql = require('mysql2');
+const EvenEmitter = require('events');
+
 
 // const pool = mysql.createPool({
 //     host: process.env.DB_HOST,
@@ -7,6 +9,8 @@ var mysql = require('mysql2');
 //     password: process.env.DB_PASSWORD,
 // });
 
+console.log('hello');
+
 var con = mysql.createConnection({
   host : "vincentprivatenas.mynetgear.com",
   port : "3306",
@@ -14,16 +18,25 @@ var con = mysql.createConnection({
   password : "123456789",
   database : "Warehouse329"
 });
+const emitter = new EvenEmitter();
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  con.query("SHOW tables", function(err, result){
-  //   if (err) throw err;
-    console.log(result);
-  //   console.log(fields);
+
+
+
+emitter.on('generalSql', function(){
+  con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    con.query("show tables;", function(err, result){
+    //   if (err) throw err;
+      console.log(result);
+    //   console.log(fields);
+    });
   });
 });
+
+emitter.emit('generalSql');
+
 
 // var mysql = require('mysql');
 
