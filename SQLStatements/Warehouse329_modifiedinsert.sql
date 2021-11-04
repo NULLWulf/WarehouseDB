@@ -1,4 +1,5 @@
--- MySQL Workbench Forward Engineering
+-- Modified CREATEs by Nathaniel Wolf
+-- Initial Table Setup by Stephen Paolini
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
