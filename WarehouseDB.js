@@ -1,32 +1,22 @@
 const mysql = require('mysql2');
 const EvenEmitter = require('events');
+require('dotenv').config();
 
-// const pool = mysql.createPool({
-//     host: process.env.DB_HOST,
-//     user: process.env.DB_USER,
-//     database: process.env.DB_PASSWORD,
-//     password: process.env.DB_PASSWORD,
-// });
-
-var con = mysql.createConnection({
-  host : "vincentprivatenas.mynetgear.com",
-  port : "3306",
-  user : "allyk",
-  password : "rich300",
-  database : "Warehouse329"
+const con = mysql.connect({
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+    
 });
+
+con.connect((err) => {
+  if (err) {
+    throw err;
+  }
+  console.log('Connected!');
+});
+var sql1 = "SELECT * from Employee;"  // Gets employee 
 const emitter = new EvenEmitter();
-
-emitter.on('generalSql', function(){
-  con.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-    con.query("show tables;", function(err, result){
-    //   if (err) throw err;
-      console.log(result);
-    //   console.log(fields);
-    });
-  });
-});
-
 emitter.emit('generalSql');
