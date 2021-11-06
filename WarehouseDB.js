@@ -2,7 +2,7 @@ const mysql = require('mysql2');
 const EvenEmitter = require('events');
 require('dotenv').config();
 
-const con = mysql.connect({
+const pool = mysql.createPool({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     user: process.env.DB_USER,
@@ -11,12 +11,8 @@ const con = mysql.connect({
     
 });
 
-con.connect((err) => {
-  if (err) {
-    throw err;
-  }
-  console.log('Connected!');
-});
-var sql1 = "SELECT * from Employee;"  // Gets employee 
-const emitter = new EvenEmitter();
-emitter.emit('generalSql');
+pool.query('select * FROM Employee;', function(err, result){
+  console.log(result);
+})
+
+console.log("Program reached end")
