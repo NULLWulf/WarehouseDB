@@ -1,6 +1,9 @@
 const mysql = require('mysql2');
-const EvenEmitter = require('events');
+const EventEmitter = require('events');
 require('dotenv').config();
+
+class Emitter extends EventEmitter {}
+const sqlEmitter = new Emitter();
 
 const pool = mysql.createPool({
     host: process.env.DB_HOST,
@@ -11,8 +14,11 @@ const pool = mysql.createPool({
     
 });
 
-pool.query('select * FROM Employee;', function(err, result){
-  console.log(result);
-})
+sqlEmitter.on('event', () => {
+  console.log('an event occurred!');
+  pool.query('select * FROM Employee;', function(err, result){
+    console.log(result);
+  });
+});
 
-console.log("Program reached end")
+sqlEmitter.emit('event');
