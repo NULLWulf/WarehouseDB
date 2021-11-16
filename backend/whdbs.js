@@ -27,14 +27,14 @@ class whdbs{
   async getSql() { // naming is ambigious for now
     try {
         const response = await new Promise((resolve, reject) => {
-            const query = "";
+            const query = "select Orders.RouteName, Routes.Region from Orders, Routes where Orders.RouteName = Routes.RouteName;";
 
             connection.query(query, (err, results) => {
                 if (err) reject(new Error(err.message));
                 resolve(results);
             })
         });
-        // console.log(response);
+       console.log(response);
         return response;
     } catch (error) {
         console.log(error);
