@@ -9,6 +9,7 @@ console.log("App is running")
 
 global.port = process.env.HOST_PORT
 
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended : false}));
