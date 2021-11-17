@@ -12,7 +12,8 @@ app.use(express.urlencoded({ extended : false}));
     
 const db = warehouseDB.getDbServiceInstance()
 
-app.get('/tryGrab', (request, response) =>{
+
+app.get('/', (request, response) =>{
     const db = warehouseDB.getDbServiceInstance();
     const result = db.getSql();
     console.log(result);
@@ -21,5 +22,6 @@ app.get('/tryGrab', (request, response) =>{
         .then(data => response.json({data : data}))
         .catch(err => console.log(err));
 });
+
 
 app.listen(port, () => console.log('app is running on port ' + port + '.'));
