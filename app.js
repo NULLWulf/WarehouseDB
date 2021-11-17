@@ -26,4 +26,4 @@ app.get('/', (request, response) =>{
 });
 
 
-app.listen(port, () => console.log('app is running on port ' + port + '.'));
+app.listen(process.env.HOST_PORT || 3000)
