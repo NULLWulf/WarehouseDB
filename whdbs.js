@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
 });
 
 connection.connect((err) => {
-  if (err) {g
+  if (err) {
       console.log(err.message);
   }
 })
