@@ -10,6 +10,6 @@
     "nodemon": "^2.0.14"
   },
   "scripts": {
-    "start": "backend/node app.js"
+    "start": "node app.js"
   }
 }
