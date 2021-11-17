@@ -12,10 +12,7 @@ app.use(express.urlencoded({ extended : false}));
     
 const db = warehouseDB.getDbServiceInstance()
 
-app.tryGrab = function (tryGrab, param2) {
-
-}
-app.tryGrab('/tryGrab', (request, response) =>{
+app.get('/tryGrab', (request, response) =>{
     const db = warehouseDB.getDbServiceInstance();
     const result = db.getSql();
     console.log(result);
