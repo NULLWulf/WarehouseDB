@@ -22,4 +22,4 @@ app.get('/', (request, response) =>{
         .catch(err => console.log(err));
 });
 
-app.listen(3000)
+app.listen(process.env.PORT)
