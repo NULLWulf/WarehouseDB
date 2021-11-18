@@ -6,14 +6,11 @@ dotenv.config();
 
 const warehouseDB = require('./whdbs');
 
-global.port = process.env.HOST_PORT
-
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended : false}));
     
 const db = warehouseDB.getDbServiceInstance()
-
 
 app.get('/', (request, response) =>{
     const db = warehouseDB.getDbServiceInstance();
@@ -25,5 +22,4 @@ app.get('/', (request, response) =>{
         .catch(err => console.log(err));
 });
 
-
-app.listen(process.env.PORT || 3000)
+app.listen(3000)
