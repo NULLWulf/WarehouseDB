@@ -26,4 +26,4 @@ app.get('/', (request, response) =>{
 });
 
 
-app.listen(process.env.HOST_PORT || 3000)
+app.listen(process.env.PORT || 3000)
