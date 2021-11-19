@@ -36,6 +36,9 @@ app.get('/frontEndPoker', (request, response) =>{
 
 app.get('/', function(req, res) {
     res.sendFile('/warehouse.html', {root: __dirname })
+  const db = warehouseDB.getDbServiceInstance();
+  const result = db.getSql();
+  console.log(result);
 });
 
 
