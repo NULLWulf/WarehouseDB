@@ -19,15 +19,20 @@ app.get('/frontEndPoker', (request, response) =>{
   console.log("Poked from Front End");
 });
 
-app.get('/getQuery', (request, response) =>{
+// app.get('/getQuery', (request, response) =>{
+//     const db = warehouseDB.getDbServiceInstance();
+//     const result = db.getSql();
+//     console.log(result);
+//
+//     result
+//         .then(data => response.json({data : data}))
+//         .catch(err => console.log(err));
+// });
+  app.get('/getQuery', (request, response) =>{
     const db = warehouseDB.getDbServiceInstance();
     const result = db.getSql();
     console.log(result);
-
-    result
-        .then(data => response.json({data : data}))
-        .catch(err => console.log(err));
-});
+    response.json(result);});
 
 app.get('/', function(req, res) {
     res.sendFile('/warehouse.html', {root: __dirname })
