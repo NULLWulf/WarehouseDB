@@ -1,3 +1,5 @@
+// Author : Nathaniel Wolf
+
 const express = require('express');
 const app = express();
 const cors = require('cors')
@@ -15,32 +17,30 @@ app.use(express.urlencoded({ extended : false}));
     
 const db = warehouseDB.getDbServiceInstance()
 
+const query1 = ""
+const query2 = ""
+const query3 = ""
+const query4 = ""
+const query5 = ""
+
 app.get('/frontEndPoker', (request, response) =>{
   console.log("Poked from Front End");
 });
 
-// app.get('/getQuery', (request, response) =>{
-//     const db = warehouseDB.getDbServiceInstance();
-//     const result = db.getSql();
-//     console.log(result);
-//
-//     result
-//         .then(data => response.json({data : data}))
-//         .catch(err => console.log(err));
-// });
-  app.get('/getQuery', (request, response) =>{
+app.get('/getQuery', (request, response) =>{
+    const query = "select Orders.RouteName, Routes.Region from Orders, Routes where Orders.RouteName = Routes.RouteName;";
     const db = warehouseDB.getDbServiceInstance();
-    const result = db.getSql();
+    const result = db.getSql(query);
     console.log(result);
-    response.json(result);});
+
+    result
+        .then(data => response.json({data : data}))
+        .catch(err => console.log(err));
+});
 
 app.get('/', function(req, res) {
     res.sendFile('/warehouse.html', {root: __dirname })
-  const db = warehouseDB.getDbServiceInstance();
-  const result = db.getSql();
-  console.log(result);
+
 });
 
-
-// test
 app.listen(process.env.PORT || 3000)

@@ -1,15 +1,23 @@
 
+$.ajax({
+    url: '/getQuery',
+    type: "get",
+    dataType: "json",
 
-window.addEventListener('DOMContentLoaded',(event) =>{
-    console.log('Test')
-    let dataName = []
-    let request = async () => {
-        const response = await fetch('/getQuery');
-        const data = await response.json();
-        dataName = data.name;
+    success: function(data) {
+        drawTable(data);
     }
-
-    let name = document.getElementById('name')
-    name.textContent = dataName;
-
 });
+
+function drawTable(data) {
+    for (var i = 0; i < data.length; i++) {
+        drawRow(data[i]);
+    }
+}
+
+function drawRow(rowData) {
+    var row = $("<tr />")
+    $("#personDataTable").append(row);
+    row.append($("<td>" + rowData.id + "</td>"));
+    row.append($("<td>" + rowData.title + "</td>"));
+}
