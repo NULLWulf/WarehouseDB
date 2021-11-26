@@ -17,20 +17,11 @@ app.use(express.urlencoded({ extended : false}));
     
 const db = warehouseDB.getDbServiceInstance()
 
-const query1 = ""
-const query2 = ""
-const query3 = ""
-const query4 = ""
-const query5 = ""
-
-app.get('/frontEndPoker', (request, response) =>{
-  console.log("Poked from Front End");
-});
+const query1 = "select Orders.RouteName, Routes.Region from Orders, Routes where Orders.RouteName = Routes.RouteName;"
 
 app.get('/getQuery', (request, response) =>{
-    const query = "select Orders.RouteName, Routes.Region from Orders, Routes where Orders.RouteName = Routes.RouteName;";
     const db = warehouseDB.getDbServiceInstance();
-    const result = db.getSql(query);
+    const result = db.getSql(query1);
     console.log(result);
 
     result
@@ -44,3 +35,4 @@ app.get('/', function(req, res) {
 });
 
 app.listen(process.env.PORT || 3000)
+
