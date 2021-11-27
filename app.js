@@ -20,7 +20,7 @@ const db = warehouseDB.getDbServiceInstance()
 // Displays order, customer id, route name, region associated with
 const query1 = "SELECT Orders.OrderID, Orders.CustomerID, Orders.RouteName, Routes.Region FROM Orders, Routes WHERE Orders.RouteName = Routes.RouteName;"
 // Shows supervisors or employees making above 50,000
-const query2 = "SELECT FirstName, LastName,Position,Age,Salary FROM Employee WHERE Salary>'50000' or Position = 'Supervisor';"
+const query2 = "SELECT FirstName, LastName, Position, Age, Salary FROM Employee WHERE Salary>'50000' or Position = 'Supervisor';"
 
 
 
