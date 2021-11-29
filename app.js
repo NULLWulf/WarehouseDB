@@ -14,7 +14,7 @@ const path = require("path");
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended : false}));
-    
+app.use(express.static(__dirname + '/'));
 const db = warehouseDB.getDbServiceInstance()
 
 // Displays order, customer id, route name, region associated with
