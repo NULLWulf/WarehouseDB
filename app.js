@@ -26,8 +26,6 @@ const query3 = "select AssignedZone.Zone, COUNT(DISTINCT EmployeeID) as Assigned
 // Distinct Items View
 const query4 = "select Inventory.ItemType, count(ALL Inventory.ItemName) as Distint_Items_Of_Time from Inventory\n GROUP BY ItemType;"
 
-
-
 app.get('/query1', (request, response) =>{
     const db = warehouseDB.getDbServiceInstance();
     const result = db.getSql(query1);
