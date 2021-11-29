@@ -3,11 +3,12 @@ document.getElementById('fetchOrders').addEventListener('click', function(){
         return response.json();
     }).then(function(json) {
         let query = json;
-        initialize(query);
         console.log(query);
+
     }).catch(function(err) {
         console.log('Fetch problem: ' + err.message);
     });
+
 
 });
 
@@ -16,8 +17,8 @@ document.getElementById('fetchEmployees').addEventListener('click', function(){
         return response.json();
     }).then(function(json) {
         let query = json;
-        initialize(query);
         console.log(query);
+
     }).catch(function(err) {
         console.log('Fetch problem: ' + err.message);
     });
@@ -29,7 +30,6 @@ document.getElementById('fetchAssigned').addEventListener('click', function(){
         return response.json();
     }).then(function(json) {
         let query = json;
-        initialize(query);
         console.log(query);
     }).catch(function(err) {
         console.log('Fetch problem: ' + err.message);
@@ -42,7 +42,6 @@ document.getElementById('fetchInventory').addEventListener('click', function(){
         return response.json();
     }).then(function(json) {
         let query = json;
-        initialize(query);
         console.log(query);
     }).catch(function(err) {
         console.log('Fetch problem: ' + err.message);
@@ -56,7 +55,6 @@ document.getElementById('fetchInventory').addEventListener('click', function(){
         return response.json();
     }).then(function(json) {
         let query = json;
-        initialize(query);
         console.log(query);
     }).catch(function(err) {
         console.log('Fetch problem: ' + err.message);
