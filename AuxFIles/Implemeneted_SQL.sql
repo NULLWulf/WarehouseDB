@@ -5,7 +5,7 @@ GROUP BY Zone
 ORDER BY Zone;
 
 /* Distinct Items in Zone */
-select Inventory.ItemType, count(ALL Inventory.ItemName) as Distint_Items_Of_Time
+select Inventory.ItemType, count(ALL Inventory.ItemName) as Distinct_Items
 from Inventory
 GROUP BY ItemType;
 

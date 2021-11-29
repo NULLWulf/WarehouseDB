@@ -1,27 +1,66 @@
-document.addEventListener('DOMContentLoaded', function () {
-  fetch('vincentprivatenas.mynetgear.com')
-    .then(response => response.json())
-    .then(data => loadHTMLTable(data['data']));
-
+document.getElementById('fetchOrders').addEventListener('click', function(){
+    fetch('/query1').then(function(response) {
+        return response.json();
+    }).then(function(json) {
+        let query = json;
+        initialize(query);
+        console.log(query);
+    }).catch(function(err) {
+        console.log('Fetch problem: ' + err.message);
+    });
 
 });
-/* this is for whe you press the button it should display the table*/
-document.getElementById('fetchOrders').addEventListener('click', loadHTMLTable);
 
-/* this is where the query data will get stored after grabbing from json going to have to repeat for each table i think--> */
-function fetchWareData(){
-  fetch(/*"this should be where the query goes"*/)
-  .then(response => response.json())
-  .then(query1 =>cosole.log(query1));
-}
+document.getElementById('fetchEmployees').addEventListener('click', function(){
+    fetch('/query2').then(function(response) {
+        return response.json();
+    }).then(function(json) {
+        let query = json;
+        initialize(query);
+        console.log(query);
+    }).catch(function(err) {
+        console.log('Fetch problem: ' + err.message);
+    });
 
-/* not sure about using this still yet */
-function loadHTMLTable(data) {
-    const table = document.querySelector('table-bodya');
-    if (data.length === 0) {
-        table.innerHTML = "<tr><td class='no-data' colspan='5'>No Data</td></tr>";
-return;
-    }
-    let tableHtml = "";
 });
-}
+
+document.getElementById('fetchAssigned').addEventListener('click', function(){
+    fetch('/query3').then(function(response) {
+        return response.json();
+    }).then(function(json) {
+        let query = json;
+        initialize(query);
+        console.log(query);
+    }).catch(function(err) {
+        console.log('Fetch problem: ' + err.message);
+    })
+
+});
+
+document.getElementById('fetchInventory').addEventListener('click', function(){
+    fetch('/query4').then(function(response) {
+        return response.json();
+    }).then(function(json) {
+        let query = json;
+        initialize(query);
+        console.log(query);
+    }).catch(function(err) {
+        console.log('Fetch problem: ' + err.message);
+    });
+
+});
+
+// Placeholder for query 5
+document.getElementById('fetchInventory').addEventListener('click', function(){
+    fetch('/query5').then(function(response) {
+        return response.json();
+    }).then(function(json) {
+        let query = json;
+        initialize(query);
+        console.log(query);
+    }).catch(function(err) {
+        console.log('Fetch problem: ' + err.message);
+    });
+
+});
+
