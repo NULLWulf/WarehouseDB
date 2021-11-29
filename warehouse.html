@@ -1,32 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<html lang= "en">
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JSON Test</title>
+    <title>Warehouse</title>
+    <link rel="stylesheet" type="text/css" href="Warestyle.css">
 </head>
 <body>
-<div id="myData"></div>
-<script>
-    fetch('/getQuery')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            appendData(data);
-        })
-        .catch(function (err) {
-            console.log('error: ' + err);
-        });
-    function appendData(data) {
-        var mainContainer = document.getElementById("myData");
-        for (var i = 0; i < data.length; i++) {
-            var div = document.createElement("div");
-            div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
-            mainContainer.appendChild(div);
-        }
-    }
-</script>
+  <center>  <h1>WareHouse 329 inc.</h1> </center>
+      <header>
+  <center>  <h2>Quick Tabs</h2> </center>
+  <button id="fetchOrders">Show Orders</button>
+  <button id="fetchEmployees">Show Employees</button>
+  <button id="fetchAssigned">Assigned Employee Count</button>
+  <button id="fetchInventory">Distinct Inventory</button>
+  
+  <!-- changed buttons to work with fetching and listeners
+  <input type="button" value="Show Orders" onclick="" style="float: center;">
+  <input type="button" value="Show Employees" onclick="" style="float: center;">
+  <input type="button" value="Assigned Employee Count" onclick="" style="float: center;">
+  <input type="button" value="Distinct Inventory" onclick="" style="float: center;">\
+-->
+</header>
+
+<table id= "table a">
+  <thead>
+    <th>Order ID</th>
+    <th>Customer ID</th>
+    <th>Route Name</th>
+    <th>Region</th>
+    </thead>
+    <tbody id = "table-bodya">
+
+<table id= "table b ">
+      <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Position</th>
+        <th>Salary</th>
+        <th>Assigned Zone</th>
+        </thead>
+<tbody id = "table-bodyb">
+
+  <table id= "table c">
+          <thead>
+            <th>Zone</th>
+            <th>Assigned Employee</th>
+            <th>Route Name</th>
+            </thead>
+<tbody id = "table-bodyc">
+
+  <table id= "table d">
+              <thead>
+                <th>Item</th>
+                <th>Type</th>
+                <th>Unique Count</th>
+                </thead>
+<tbody id = "table-bodyd">
+
+  <!-- used to connect db to webpage
+   <script src="filename"></script>
+-->
 </body>
 </html>

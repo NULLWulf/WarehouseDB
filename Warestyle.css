@@ -1,0 +1,26 @@
+body{
+  background-color:#add8e6;
+
+}
+
+header{
+   background-color: #417dc1;
+   color: #black;
+   line-height: 300%;
+   text-indent: 1em;
+   width: 50%;
+   margin: 50px auto;
+}
+table{
+  margin: 50px auto;
+  background-color: #white;
+}
+table, th, td{
+  border-collapse: collapse;
+  border: 1px solid #000;
+
+}
+th, td{
+  padding: 5px;
+
+}
