@@ -32,7 +32,7 @@ app.get('/query1', (request, response) =>{
     const db = warehouseDB.getDbServiceInstance();
     const result = db.getSql(query1);
     console.log(result);
-q
+
     result
         .then(data => response.json({data : data}))
         .catch(err => console.log(err));
