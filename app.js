@@ -24,11 +24,9 @@ const query2 = "SELECT Employee.FirstName, Employee.LastName, Employee.Position,
 // Employee view
 const query3 = "select AssignedZone.Zone, COUNT(DISTINCT EmployeeID) as Assigned_Employees from AssignedZone, Inventory GROUP BY Zone ORDER BY Zone;"
 // Distinct Items View
-const query4 = "select Inventory.ItemType, count(ALL Inventory.ItemName) as Distint_Items_Of_Time from Inventory\n GROUP BY ItemType;"
+const query4 = "select Inventory.ItemType, count(ALL Inventory.ItemName) as Distint_Items_Of_Time from Inventory GROUP BY ItemType;"
 //TBD query
-const query5 = "";
-
-
+const query5 = "select Customer.CustomerID, Customer.Companyname, Orders.OrderID, Orders.ShipDate from Customer, Orders where Orders.CustomerID = Customer.CustomerID order by Customer.CustomerID;";
 
 app.get('/query1', (request, response) =>{
     const db = warehouseDB.getDbServiceInstance();
