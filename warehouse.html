@@ -32,47 +32,7 @@
 </table>
 
 <script>
-var myArray = [
-  { 'OrderID': '1001', 'CustomerID': '3631',
-    'RouteName': 'Green',
-    'Region': 'CNY'
-  },
-  {
-    'OrderID': '1002',
-    'CustomerID': '1935',
-    'RouteName': 'Blue',
-    'Region': 'WNY' },
-  {
-    'OrderID': '1003',
-    'OrderID': '1009',
-    'CustomerID': '4972',
-    'RouteName': 'Brown',
-    'Region': 'Capital'
-  },
-  {
-    'OrderID': '1010',
-    'CustomerID': '4850',
-    'RouteName': 'White',
-    'Region': 'Upstate'
-  },
 
-  { 'OrderID': '1011', 'CustomerID': '2781', 'RouteName': 'Pink', 'Region': 'WNY' }
-]
-buildTable(myArray)
-
-  function buildTable(data){
-    var table = document.getElementById('myTable')
-    for (var i = 0; i < data.length; i++){
-    var row = `
-    <tr>
-             <td>${data[i].OrderID} </td>
-             <td>${data[i].CustomerID} </td>
-             <td>${data[i].RouteName} </td>
-             <td>${data[i].Region} </td>
-    </tr> `
-    table.innerHTML += row
-  }
-}
 </script>
 <center><h2> All Employees </h2></center>
 <table class="table table-striped">
@@ -87,165 +47,6 @@ buildTable(myArray)
     </tbody>
 </table>
 <script>
-var myArray1 = [
-  { 'FirstName': 'Nathan',
-    'LastName': 'Davidson',
-    'Position': 'Worker',
-    'Salary': '50000',
-    'Zone': 'Produce'
-  },
-  { 'FirstName': 'Victoria',
-    'LastName': 'Steele',
-    'Position': 'FK_Operator',
-    'Salary': '28000',
-    'Zone': 'Produce'
-  },
-  { 'FirstName': 'Amy',
-    'LastName': 'Murray',
-    'Position': 'Clerk',
-    'Salary': '32000',
-    'Zone': 'Meat'
-  },
-  { 'FirstName': 'Nicole',
-    'LastName': 'Chan ',
-    'Position': 'Clerk',
-    'Salary': '31000',
-    'Zone': 'Canned'
-},
-  { 'FirstName': 'Paula',
-    'LastName': 'Chan ',
-    'Position': 'Loader',
-    'Salary': '30000',
-    'Zone': 'Produce'
-  },
-  {'FirstName': 'Andrea',
-    'LastName': 'James',
-    'Position': 'Material Handler',
-    'Salary': '32000',
-    'Zone': 'Meat'
-  },
-  { 'FirstName': 'Daniel',
-    'LastName': 'Arias',
-    'Position': 'Packer',
-    'Salary': '24000',
-    'Zone': 'Canned'
-  },
-  { 'FirstName': 'Luis',
-    'LastName': 'Dominguez',
-    'Position': 'Packer',
-    'Salary': '24000',
-    'Zone': 'Produce'
-  },
-  {'FirstName': 'Joseph',
-    'LastName': 'Barrera',
-    'Position': 'Loader',
-    'Salary': '26500',
-    'Zone': 'Meat'
-  },
-{'FirstName': 'Andrea',
-    'LastName': 'Li',
-    'Position': 'Packer',
-    'Salary': '23000',
-    'Zone': 'Canned'
-  },
-  {'FirstName': 'Christine',
-    'LastName': 'Mayer',
-    'Position': 'Packer',
-    'Salary': '24500',
-    'Zone': 'Produce'
-  },
-  {'FirstName': 'Katrina',
-    'LastName': 'Wilson',
-    'Position': 'Stocker',
-    'Salary': '28000',
-    'Zone': 'Meat'
-  },
-  { 'FirstName': 'Erin',
-    'LastName': 'Hubbard',
-    'Position': 'FK_Operator',
-    'Salary': '26000',
-    'Zone': 'Meat'
-  },
-  { 'FirstName': 'Jason',
-    'LastName': 'King',
-    'Position': 'Material Handler',
-    'Salary': '30000',
-    'Zone': 'Canned'
-  },
-  { 'FirstName': 'Jeremy',
-    'LastName': 'Cain',
-    'Position': 'Supervisor',
-    'Salary': '70000',
-    'Zone': 'Produce'
-  },
-{  'FirstName': 'Anthony',
-    'LastName': 'Horton',
-    'Position': 'Stocker',
-    'Salary': '30000',
-    'Zone': 'Meat'
-  },
-  { 'FirstName': 'Amanda',
-    'LastName': 'Martinez',
-    'Position': 'Stocker',
-    'Salary': '28000',
-    'Zone': 'Canned'
-  },
-  { 'FirstName': 'John',
-    'LastName': 'Singh',
-    'Position': 'Stocker',
-    'Salary': '25700',
-    'Zone': 'Produce'
-  },
-  {'FirstName': 'Kaitlyn',
-    'LastName': 'Petty',
-    'Position': 'FK_Operator',
-    'Salary': '31000',
-    'Zone': 'Meat'
-  },
-  {'FirstName': 'Taylor',
-    'LastName': 'Young',
-    'Position': 'Supervisor',
-    'Salary': '68000',
-    'Zone': 'Canned'
-  },
-{'FirstName': 'Nancy',
-    'LastName': 'Taylor',
-    'Position': 'Stocker',
-    'Salary': '29000',
-    'Zone': 'Produce'
-  },
-  {'FirstName': 'Melissa',
-    'LastName': 'Johnson',
-    'Position': 'Packer',
-    'Salary': '26000',
-    'Zone': 'Meat'
-  },
-  {'FirstName': 'Christopher',
-    'LastName': 'Herring',
-    'Position': 'Loader',
-    'Salary': '29000',
-    'Zone': 'Canned'
-  },
-  {'FirstName': 'Amy',
-    'LastName': 'Gallegos',
-    'Position': 'FK_Operator',
-    'Salary': '27000',
-    'Zone': 'Canned'
-  },
-  {'LastName': 'Barrera',
-    'Position': 'Stocker',
-    'Salary': '25600',
-    'Zone': 'Meat'
-  },
-  {'FirstName': 'James',
-    'LastName': 'Hodges',
-    'Position': 'Stocker',
-    'Salary': '27900',
-    'Zone': 'Canned'
-  }
-]
-buildTable(myArray1)
-
   function buildTable(data){
     var table = document.getElementById('myTable1')
     for (var i = 0; i < data.length; i++){
@@ -272,12 +73,6 @@ buildTable(myArray1)
 </table>
 
 <script>
-var myArray2 = [
-  { 'Zone': 'Canned', 'Assigned_Employees': '10' },
-  { 'Zone': 'Meat', 'Assigned_Employees': '10' },
-  { 'Zone': 'Produce', 'Assigned_Employees': '10' }
-]
-buildTable(myArray2)
 
   function buildTable(data){
     var table = document.getElementById('myTable2')
@@ -302,14 +97,6 @@ buildTable(myArray2)
 </table>
 
 <script>
-var myArray3 = [
-  { 'ItemType': 'Beef', 'Distint_Items_Of_Time': '3' },
-  { 'ItemType': 'Chicken', 'Distint_Items_Of_Time': '3' },
-  { 'ItemType': 'Fish', 'Distint_Items_Of_Time': '3' },
-  { 'ItemType': 'Soups', 'Distint_Items_Of_Time': '5' },
-  { 'ItemType': 'Vegetables', 'Distint_Items_Of_Time': '3' }
-]
-buildTable(myArray3)
 
   function buildTable(data){
     var table = document.getElementById('myTable3')
@@ -336,33 +123,7 @@ buildTable(myArray3)
 </table>
 
 <script>
-var myArray4 = [
-  { 'CustomerID': '1162',
-    'Companyname': 'AliExpress',
-    'OrderID': '1003',
-    'ShipDate': '2021-10-17T04:00:00.000Z'
-  },
-  { 'CustomerID': '1873',
-    'Companyname': 'Sunrise Wholesale',
-    'OrderID': '1004',
-    'ShipDate': '2021-11-10T05:00:00.000Z'
-  },
-  { 'CustomerID': '1935',
-    'Companyname': 'Kole Imports',
-    'OrderID': '1002',
-    'ShipDate': '2021-10-01T04:00:00.000Z'
-  },
-  { 'CustomerID': '4972',
-    'Companyname': 'Spocket',
-    'OrderID': '1009',
-    'ShipDate': '2021-08-16T04:00:00.000Z'
-  },
-  {'CustomerID': '4982',
-    'Companyname': 'DHGate',
-    'OrderID': '1007',
-    'ShipDate': '2021-08-15T04:00:00.000Z'
-  }
-]
+
 
 buildTable(myArray4)
 
