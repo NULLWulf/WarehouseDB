@@ -50,7 +50,7 @@ document.getElementById('fetchInventory').addEventListener('click', function(){
 });
 
 // Placeholder for query 5
-document.getElementById('fetchInventory').addEventListener('click', function(){
+document.getElementById('fetchCustomerOrders').addEventListener('click', function(){
     fetch('/query5').then(function(response) {
         return response.json();
     }).then(function(json) {
