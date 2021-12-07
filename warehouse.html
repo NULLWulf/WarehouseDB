@@ -12,56 +12,70 @@
   <center>  <h1>WareHouse 329 inc.</h1> </center>
       <header>
   <center>  <h2>Quick Tabs</h2> </center>
+  <center>
   <button id="fetchOrders">Show Orders</button>
   <button id="fetchEmployees">Show Employees</button>
   <button id="fetchAssigned">Assigned Employee Count</button>
   <button id="fetchInventory">Distinct Inventory</button>
+  <button id="fetchCustomerOrders">Customer Orders</button>
+  </center>
 
-<!--          <input type="button" value="Show Orders" onclick="" style="float: center;">-->
-
-          <!-- changed buttons to work with fetching and listeners
-          <input type="button" value="Show Employees" onclick="" style="float: center;">
-          <input type="button" value="Assigned Employee Count" onclick="" style="float: center;">
-          <input type="button" value="Distinct Inventory" onclick="" style="float: center;">\
-        -->
 </header>
-
-<table id= "table a">
-  <thead>
-    <th>Order ID</th>
-    <th>Customer ID</th>
-    <th>Route Name</th>
+<div style="text-align: center;"> <h2> All Curent Orders</h2> </div>
+<table class="table table-striped">
+  <tr class="bg-info">
+    <th> OrderID </th>
+    <th> CustomerID </th>
+    <th>RouteName</th>
     <th>Region</th>
-    </thead>
-    <tbody id = "table-bodya">
+  </tr>
+   <tbody id="myTable">
+    </tbody>
+</table>
 
-<table id= "table b ">
-      <thead>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Position</th>
-        <th>Salary</th>
-        <th>Assigned Zone</th>
-        </thead>
-<tbody id = "table-bodyb">
+<center><h2> All Employees </h2></center>
+<table class="table table-striped">
+  <tr class="bg-info">
+    <th> FirstName</th>
+    <th> LastName</th>
+    <th>Position</th>
+    <th>Salary</th>
+    <th> Zone </th>
+  </tr>
+   <tbody id="myTable1">
+    </tbody>
+</table>
+<center><h2> Assigned Employee Count </h2></center>
+<table class="table table-striped">
+  <tr class="bg-info">
+    <th> Zone</th>
+    <th> Assigned_Employees</th>
+  </tr>
+   <tbody id="myTable2">
+    </tbody>
+</table>
+<center><h2> Distinct Inventory </h2></center>
+<table class="table table-striped">
+  <tr class="bg-info">
+    <th> Item Type</th>
+    <th> Distinct Number of Items </th>
+  </tr>
+   <tbody id="myTable3">
+    </tbody>
+</table>
 
-  <table id= "table c">
-          <thead>
-            <th>Zone</th>
-            <th>Assigned Employee</th>
-            <th>Route Name</th>
-            </thead>
-<tbody id = "table-bodyc">
-
-  <table id= "table d">
-              <thead>
-                <th>Item</th>
-                <th>Type</th>
-                <th>Unique Count</th>
-                </thead>
-<tbody id = "table-bodyd">
-
-<script src="ware.js"></script>
+<center><h2> Customer Orders </h2></center>
+<table class="table table-striped">
+  <tr class="bg-info">
+    <th> Customer ID</th>
+    <th> Company Name</th>
+      <th>Order ID</th>
+      <th> Ship Date </th>
+  </tr>
+   <tbody id="myTable4">
+    </tbody>
+</table>
+  <script src="ware.js"></script>
 
 </body>
 </html>
