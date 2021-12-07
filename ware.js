@@ -31,14 +31,14 @@ document.getElementById('fetchEmployees').addEventListener('click', function(){
     }).then(function(json) {
         let query = json;
         console.log(query);
-        buildOrderCustTable1(query.data)
+        buildEmployeeTable(query.data)
 
     }).catch(function(err) {
         console.log('Fetch problem: ' + err.message);
     });
 
 });
-function buildOrderCustTable1(data){
+function buildEmployeeTable(data){
     var table = document.getElementById('myTable1')
     for (var i = 0; i < data.length; i++){
         var row = `
@@ -58,7 +58,7 @@ document.getElementById('fetchAssigned').addEventListener('click', function(){
     }).then(function(json) {
         let query = json;
         console.log(query);
-        buildOrderCustTable2(query.data)
+        buildAssignedZoneTable(query.data)
 
 
     }).catch(function(err) {
@@ -66,7 +66,7 @@ document.getElementById('fetchAssigned').addEventListener('click', function(){
     })
 
 });
-function buildOrderCustTable2(data){
+function buildAssignedZoneTable(data){
     var table = document.getElementById('myTable2')
     for (var i = 0; i < data.length; i++){
         var row = `
@@ -83,13 +83,13 @@ document.getElementById('fetchInventory').addEventListener('click', function(){
     }).then(function(json) {
         let query = json;
         console.log(query);
-        buildOrderCustTable3(query.data)
+        buildDistinctItemTable(query.data)
     }).catch(function(err) {
         console.log('Fetch problem: ' + err.message);
     });
 
 });
-function buildOrderCustTable3(data){
+function buildDistinctItemTable(data){
     var table = document.getElementById('myTable3')
     for (var i = 0; i < data.length; i++){
         var row = `
@@ -107,13 +107,13 @@ document.getElementById('fetchCustomerOrders').addEventListener('click', functio
     }).then(function(json) {
         let query = json;
         console.log(query);
-        buildOrderCustTable4(query.data)
+        buildCustomerOrderTable(query.data)
     }).catch(function(err) {
         console.log('Fetch problem: ' + err.message);
     });
 
 });
-function buildOrderCustTable4(data){
+function buildCustomerOrderTable(data){
     var table = document.getElementById('myTable4')
     for (var i = 0; i < data.length; i++){
         var row = `

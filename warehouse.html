@@ -31,9 +31,6 @@
     </tbody>
 </table>
 
-<script>
-
-</script>
 <center><h2> All Employees </h2></center>
 <table class="table table-striped">
   <tr class="bg-info">
@@ -46,22 +43,6 @@
    <tbody id="myTable1">
     </tbody>
 </table>
-<script>
-  function buildTable(data){
-    var table = document.getElementById('myTable1')
-    for (var i = 0; i < data.length; i++){
-    var row = `
-    <tr>
-             <td>${data[i].FirstName} </td>
-             <td>${data[i].LastName} </td>
-             <td>${data[i].Position} </td>
-             <td>${data[i].Salary} </td>
-             <td>${data[i].Zone} </td>
-    </tr> `
-    table.innerHTML += row
-  }
-}
-</script>
 <center><h2> Assigned Employee Count </h2></center>
 <table class="table table-striped">
   <tr class="bg-info">
@@ -71,21 +52,6 @@
    <tbody id="myTable2">
     </tbody>
 </table>
-
-<script>
-
-  function buildTable(data){
-    var table = document.getElementById('myTable2')
-    for (var i = 0; i < data.length; i++){
-    var row = `
-    <tr>
-             <td>${data[i].Zone} </td>
-             <td>${data[i].Assigned_Employees} </td>
-    </tr> `
-    table.innerHTML += row
-  }
-}
-</script>
 <center><h2> Distinct Inventory </h2></center>
 <table class="table table-striped">
   <tr class="bg-info">
@@ -96,20 +62,6 @@
     </tbody>
 </table>
 
-<script>
-
-  function buildTable(data){
-    var table = document.getElementById('myTable3')
-    for (var i = 0; i < data.length; i++){
-    var row = `
-    <tr>
-             <td>${data[i].ItemType} </td>
-             <td>${data[i].Distint_Items_Of_Time} </td>
-    </tr> `
-    table.innerHTML += row
-  }
-}
-</script>
 <center><h2> Customer Orders </h2></center>
 <table class="table table-striped">
   <tr class="bg-info">
@@ -121,27 +73,7 @@
    <tbody id="myTable4">
     </tbody>
 </table>
-
-<script>
-
-
-buildTable(myArray4)
-
-  function buildTable(data){
-    var table = document.getElementById('myTable4')
-    for (var i = 0; i < data.length; i++){
-    var row = `
-    <tr>
-             <td>${data[i].CustomerID} </td>
-             <td>${data[i].Companyname} </td>
-             <td>${data[i].OrderID} </td>
-             <td>${data[i].ShipDate} </td>
-    </tr> `
-    table.innerHTML += row
-  }
-}
-</script>
-<script src="ware.js"></script>
+  <script src="ware.js"></script>
 
 </body>
 </html>
