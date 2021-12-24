@@ -1,3 +1,6 @@
+// Author: Dezhane Williams
+// Co-author (get requests): Nathan Wolf
+
 document.getElementById('fetchOrders').addEventListener('click', function(){
     fetch('/query1').then(function(response) {
         return response.json();
